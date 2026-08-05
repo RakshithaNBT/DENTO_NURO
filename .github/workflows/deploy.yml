@@ -43,7 +43,7 @@ jobs:
           npm run build
         env:
           CI: false
-          PUBLIC_URL: /DENTO_NURO
+          PUBLIC_URL: /dento_nuro_clinic
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
