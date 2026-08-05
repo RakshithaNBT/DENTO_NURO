@@ -1,0 +1,11 @@
+{
+  "name": "dento-nuro-clinik",
+  "version": "1.0.0",
+  "description": "Premium Dento Neuro Clinic Website & Express Backend",
+  "scripts": {
+    "start": "npm run client",
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "build": "npm run build --prefix client"
+  }
+}
