@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiPhone, FiMail, FiMapPin, FiInstagram, FiFacebook, FiTwitter, FiYoutube } from 'react-icons/fi';
 import { GiTooth, GiBrain } from 'react-icons/gi';
-import logoImg from '../../assets/logo.png';
+import ClinicLogo from '../UI/ClinicLogo';
 import './Footer.css';
 
 const quickLinks   = ['Home','About','Doctors','Dental Services','Neurosurgery','Facilities','Gallery','Testimonials','FAQ','Contact','Book Appointment'];
@@ -26,7 +26,7 @@ const Footer = () => (
       {/* Brand */}
       <div className="footer-brand">
         <div className="footer-logo-wrap">
-          <img src={logoImg} alt="SMILEWISE Dento Neuro Clinic" className="footer-logo" />
+          <ClinicLogo className="footer-logo" alt="SMILEWISE Dento Neuro Clinic" />
           <div className="footer-logo-text">
             <span className="footer-logo-name">DR AHALYA'S</span>
             <span className="footer-logo-sub">SMILEWISE DENTO NEURO CLINIC</span>
