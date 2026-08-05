@@ -1,5 +1,6 @@
 import React from 'react';
 import { GiTooth, GiBrain } from 'react-icons/gi';
+import logoImg from '../../assets/logo.png';
 import './Loader.css';
 
 const Loader = () => {
@@ -35,7 +36,7 @@ const Loader = () => {
 
         {/* Center Official Clinic Emblem */}
         <div className="loader-logo-frame">
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Dr Ahalya's Dento Nuro Clinic" className="loader-logo" />
+          <img src={logoImg} alt="Dr Ahalya's Dento Nuro Clinic" className="loader-logo" />
         </div>
       </div>
 

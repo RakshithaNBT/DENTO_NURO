@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const navLinks = [
@@ -64,7 +65,7 @@ const Navbar = () => {
       <div className="container navbar-inner">
         {/* Logo */}
         <button className="navbar-logo" onClick={() => scrollTo('home')} aria-label="Go to top">
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Dr Ahalya's Dento Nuro Clinic Logo" className="logo-img" />
+          <img src={logoImg} alt="Dr Ahalya's Dento Nuro Clinic Logo" className="logo-img" />
           <div className="logo-text">
             <span className="logo-name">DR AHALYA'S</span>
             <span className="logo-sub">DENTO NURO CLINIC</span>

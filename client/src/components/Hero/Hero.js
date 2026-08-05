@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
+import logoImg from '../../assets/logo.png';
 import './Hero.css';
 
 const Hero = () => {
@@ -19,7 +20,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          poster={process.env.PUBLIC_URL + '/logo.png'}
+          poster={logoImg}
         >
           <source src={process.env.PUBLIC_URL + '/banner.mp4'} type="video/mp4" />
         </video>
