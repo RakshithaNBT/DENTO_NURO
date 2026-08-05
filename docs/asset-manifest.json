@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dento_nuro_clinic/static/css/main.400560fb.css",
+    "main.js": "/dento_nuro_clinic/static/js/main.1c14c7f6.js",
+    "index.html": "/dento_nuro_clinic/index.html",
+    "main.400560fb.css.map": "/dento_nuro_clinic/static/css/main.400560fb.css.map",
+    "main.1c14c7f6.js.map": "/dento_nuro_clinic/static/js/main.1c14c7f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.400560fb.css",
+    "static/js/main.1c14c7f6.js"
+  ]
+}
