@@ -43,7 +43,7 @@ jobs:
           npm run build
         env:
           CI: false
-          PUBLIC_URL: /dento_nuro_clinic
+          PUBLIC_URL: /DENTO_NURO
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
