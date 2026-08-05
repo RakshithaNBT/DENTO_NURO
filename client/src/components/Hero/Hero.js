@@ -19,9 +19,9 @@ const Hero = () => {
           loop
           muted
           playsInline
-          poster="/logo.png"
+          poster={process.env.PUBLIC_URL + '/logo.png'}
         >
-          <source src="/banner.mp4" type="video/mp4" />
+          <source src={process.env.PUBLIC_URL + '/banner.mp4'} type="video/mp4" />
         </video>
         <div className="hero-video-overlay"></div>
       </div>

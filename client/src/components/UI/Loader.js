@@ -35,7 +35,7 @@ const Loader = () => {
 
         {/* Center Official Clinic Emblem */}
         <div className="loader-logo-frame">
-          <img src="/logo.png" alt="Dr Ahalya's Dento Nuro Clinic" className="loader-logo" />
+          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Dr Ahalya's Dento Nuro Clinic" className="loader-logo" />
         </div>
       </div>
 

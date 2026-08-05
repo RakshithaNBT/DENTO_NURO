@@ -64,7 +64,7 @@ const Navbar = () => {
       <div className="container navbar-inner">
         {/* Logo */}
         <button className="navbar-logo" onClick={() => scrollTo('home')} aria-label="Go to top">
-          <img src="/logo.png" alt="Dr Ahalya's Dento Nuro Clinic Logo" className="logo-img" />
+          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Dr Ahalya's Dento Nuro Clinic Logo" className="logo-img" />
           <div className="logo-text">
             <span className="logo-name">DR AHALYA'S</span>
             <span className="logo-sub">DENTO NURO CLINIC</span>

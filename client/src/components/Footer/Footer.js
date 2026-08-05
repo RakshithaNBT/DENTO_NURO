@@ -25,7 +25,7 @@ const Footer = () => (
       {/* Brand */}
       <div className="footer-brand">
         <div className="footer-logo-wrap">
-          <img src="/logo.png" alt="SMILEWISE Dento Neuro Clinic" className="footer-logo" />
+          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="SMILEWISE Dento Neuro Clinic" className="footer-logo" />
           <div className="footer-logo-text">
             <span className="footer-logo-name">DR AHALYA'S</span>
             <span className="footer-logo-sub">SMILEWISE DENTO NEURO CLINIC</span>
