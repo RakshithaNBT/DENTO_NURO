@@ -60,11 +60,7 @@ const INITIAL_FAQS = [
 // Memoized FAQItem component to prevent re-rendering unaffected accordion items
 const FAQItem = memo(({ faq, index, isOpen, onToggle }) => {
   return (
-    <div
-      className={`faq-item${isOpen ? ' open' : ''}`}
-      data-aos="fade-up"
-      data-aos-delay={`${(index % 4) * 50}`}
-    >
+    <div className={`faq-item${isOpen ? ' open' : ''}`}>
       <button
         className="faq-question"
         onClick={() => onToggle(index)}
@@ -77,17 +73,20 @@ const FAQItem = memo(({ faq, index, isOpen, onToggle }) => {
           {isOpen ? <FiMinus size={18} /> : <FiPlus size={18} />}
         </span>
       </button>
-      <div
-        id={`faq-answer-${index}`}
-        className="faq-answer"
-        role="region"
-        aria-labelledby={`faq-question-${index}`}
-      >
-        <p>{faq.a}</p>
-      </div>
+      {isOpen && (
+        <div
+          id={`faq-answer-${index}`}
+          className="faq-answer"
+          role="region"
+          aria-labelledby={`faq-question-${index}`}
+        >
+          <p>{faq.a}</p>
+        </div>
+      )}
     </div>
   );
 });
+
 
 FAQItem.displayName = 'FAQItem';
 
