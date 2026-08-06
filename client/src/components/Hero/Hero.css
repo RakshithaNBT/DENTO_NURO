@@ -29,6 +29,15 @@
   transform: translate(-50%, -50%);
 }
 
+.hero-video-desktop {
+  display: block;
+}
+
+.hero-video-mobile {
+  display: none;
+}
+
+
 .hero-video-overlay {
   position: absolute;
   inset: 0;
@@ -85,11 +94,18 @@
 }
 
 @media (max-width: 768px) {
+  .hero-video-desktop {
+    display: none;
+  }
+  .hero-video-mobile {
+    display: block;
+  }
   .hero-content {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
 }
+
 
 @media (max-width: 480px) {
   .hero-content {

@@ -13,8 +13,9 @@ const Hero = () => {
     <section id="home" className="hero">
       {/* Video Background Banner */}
       <div className="hero-video-wrapper">
+        {/* Desktop Video */}
         <video
-          className="hero-video-bg"
+          className="hero-video-bg hero-video-desktop"
           autoPlay
           loop
           muted
@@ -22,8 +23,21 @@ const Hero = () => {
         >
           <source src={process.env.PUBLIC_URL + '/banner.mp4'} type="video/mp4" />
         </video>
+
+        {/* Mobile Video */}
+        <video
+          className="hero-video-bg hero-video-mobile"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={process.env.PUBLIC_URL + '/banner_mobile.mp4'} type="video/mp4" />
+        </video>
+
         <div className="hero-video-overlay"></div>
       </div>
+
 
 
       {/* Hero Scroll Action */}
