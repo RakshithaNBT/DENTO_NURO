@@ -228,9 +228,24 @@
   .about-grid { grid-template-columns: 1fr; }
   .about-why  { grid-template-columns: 1fr; }
   .about-why-image img { height: 320px; }
-  .about-counters { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-counters { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
 }
 
 @media (max-width: 480px) {
-  .about-counters { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-counters { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+  .counter-card { padding: 1.25rem 0.75rem; }
+  .counter-num { font-size: 1.7rem; }
+  .counter-label { font-size: 0.78rem; }
+  .about-card { padding: 1.75rem 1.25rem; }
+  .about-why-image img { height: 260px; }
+  .about-badge { bottom: 16px; left: 16px; padding: 0.75rem 1rem; }
+  .badge-num { font-size: 1.5rem; }
+  .badge-text { font-size: 0.65rem; }
 }
+
+@media (max-width: 360px) {
+  .about-counters { grid-template-columns: 1fr !important; }
+  .counter-card { padding: 1.25rem 1rem; }
+  .counter-num { font-size: 1.8rem; }
+}
+

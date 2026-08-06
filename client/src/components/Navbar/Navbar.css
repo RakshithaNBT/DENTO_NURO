@@ -173,20 +173,23 @@
 }
 
 .mobile-menu.open {
-  max-height: 600px;
-  padding: 1.5rem;
+  max-height: calc(100vh - var(--navbar-h));
+  padding: 1.25rem 1.5rem 2rem;
   opacity: 1;
   pointer-events: auto;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(200, 162, 90, 0.25);
 }
 
 .mobile-link {
   background: none;
   border: none;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: rgba(255,255,255,0.85);
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 1rem;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition);
@@ -214,3 +217,17 @@
   .navbar-links, .navbar-cta { display: none; }
   .hamburger { display: flex; }
 }
+
+@media (max-width: 480px) {
+  .logo-img { width: 34px; height: 34px; }
+  .logo-name { font-size: 0.78rem; }
+  .logo-sub { font-size: 0.5rem; letter-spacing: 0.12em; }
+}
+
+@media (max-width: 360px) {
+  .navbar-logo { gap: 0.5rem; }
+  .logo-img { width: 30px; height: 30px; }
+  .logo-name { font-size: 0.72rem; }
+  .logo-sub { font-size: 0.46rem; letter-spacing: 0.1em; }
+}
+

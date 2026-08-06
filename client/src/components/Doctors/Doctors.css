@@ -19,8 +19,28 @@
   transform-style: preserve-3d;
 }
 
-.doctor-card:hover .doctor-card-inner {
+.doctor-card:hover .doctor-card-inner,
+.doctor-card.flipped .doctor-card-inner {
   transform: rotateY(180deg);
+}
+
+.doctor-tap-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(59, 47, 47, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid rgba(200, 162, 90, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .doctor-front,
@@ -250,10 +270,24 @@
 /* Responsive */
 @media (max-width: 900px) {
   .doctors-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
-  .doctor-card { height: 580px; }
+  .doctor-card { height: 600px; }
 }
 
 @media (max-width: 480px) {
-  .doctor-card { height: 560px; }
-  .doctor-img-wrap { height: 280px; }
+  .doctor-card { height: 580px; }
+  .doctor-img-wrap { height: 260px; }
+  .doctor-info { padding: 1.25rem 1.25rem; }
+  .doctor-info h3 { font-size: 1.3rem; }
+  .doctor-title { font-size: 0.82rem; }
+  .meta-num { font-size: 0.95rem; }
+  .doctor-back { padding: 1.25rem; }
 }
+
+@media (max-width: 380px) {
+  .doctor-card { height: 610px; }
+  .doctor-meta { gap: 0.5rem; }
+  .meta-num { font-size: 0.85rem; }
+  .meta-label { font-size: 0.62rem; }
+  .doctor-specialty-badge { font-size: 0.75rem; padding: 0.4rem 0.75rem; }
+}
+

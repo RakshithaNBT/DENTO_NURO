@@ -142,5 +142,20 @@
 }
 
 @media (max-width: 768px) {
-  .swiper-wrapper-outer { padding: 0 2.5rem; }
+  .swiper-wrapper-outer { padding: 0 2.5rem; margin: 2.5rem 0 1rem; }
 }
+
+@media (max-width: 600px) {
+  .swiper-wrapper-outer { padding: 0; }
+  .swiper-nav-btn { display: none; }
+  .testimonial-card { padding: 1.35rem 1.15rem; }
+  .testimonial-avatar { width: 48px; height: 48px; }
+  .testimonial-text { font-size: 0.84rem; line-height: 1.7; }
+}
+
+@media (max-width: 480px) {
+  .testimonial-card { padding: 1.2rem 1rem; }
+  .testimonial-meta strong { font-size: 0.88rem; }
+  .t-location { font-size: 0.74rem; }
+}
+

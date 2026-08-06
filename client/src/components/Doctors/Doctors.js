@@ -1,5 +1,5 @@
-import React from 'react';
-import { FiAward, FiStar, FiCheckCircle } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { FiAward, FiStar, FiCheckCircle, FiRefreshCw } from 'react-icons/fi';
 import { GiTooth, GiBrain } from 'react-icons/gi';
 import './Doctors.css';
 
@@ -36,77 +36,97 @@ const doctors = [
   },
 ];
 
-const DoctorCard = ({ doc }) => (
-  <div className="doctor-card" data-aos="fade-up">
-    <div className="doctor-card-inner">
-      {/* Front */}
-      <div className="doctor-front">
-        <div className="doctor-img-wrap">
-          <img src={doc.image} alt={doc.name} loading="lazy" />
-          <div className="doctor-specialty-badge">
-            {doc.icon}
-            <span>{doc.specialty}</span>
-          </div>
-        </div>
-        <div className="doctor-info">
-          <h3>{doc.name}</h3>
-          <p className="doctor-title">{doc.title}</p>
-          <div className="doctor-qual">
-            <FiAward size={14} />
-            <span>{doc.qualification}</span>
-          </div>
-          <p className="doctor-college">{doc.college}</p>
-          <div className="doctor-meta">
-            <div className="doctor-meta-item">
-              <span className="meta-num">{doc.experience}</span>
-              <span className="meta-label">Experience</span>
-            </div>
-            <div className="doctor-divider-v"></div>
-            <div className="doctor-meta-item">
-              <span className="meta-num">{doc.regNo}</span>
-              <span className="meta-label">Registration</span>
-            </div>
-            <div className="doctor-divider-v"></div>
-            <div className="doctor-meta-item">
-              <div className="doctor-stars">
-                {[1,2,3,4,5].map(s => <FiStar key={s} size={12} fill="var(--gold)" color="var(--gold)" />)}
-              </div>
-              <span className="meta-label">Rating</span>
-            </div>
-          </div>
-        </div>
-      </div>
+const DoctorCard = ({ doc }) => {
+  const [flipped, setFlipped] = useState(false);
 
-      {/* Back — hover reveal */}
-      <div className="doctor-back">
-        <div className="doctor-back-header">
-          <img src={doc.image} alt={doc.name} className="doctor-back-img" />
-          <div>
-            <h4>{doc.name}</h4>
-            <p>{doc.title}</p>
+  const toggleFlip = () => {
+    setFlipped(!flipped);
+  };
+
+  return (
+    <div
+      className={`doctor-card${flipped ? ' flipped' : ''}`}
+      data-aos="fade-up"
+      onClick={toggleFlip}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleFlip()}
+    >
+      <div className="doctor-card-inner">
+        {/* Front */}
+        <div className="doctor-front">
+          <div className="doctor-img-wrap">
+            <img src={doc.image} alt={doc.name} loading="lazy" />
+            <div className="doctor-specialty-badge">
+              {doc.icon}
+              <span>{doc.specialty}</span>
+            </div>
+            <div className="doctor-tap-hint">
+              <FiRefreshCw size={12} />
+              <span>Tap for Bio</span>
+            </div>
+          </div>
+          <div className="doctor-info">
+            <h3>{doc.name}</h3>
+            <p className="doctor-title">{doc.title}</p>
+            <div className="doctor-qual">
+              <FiAward size={14} />
+              <span>{doc.qualification}</span>
+            </div>
+            <p className="doctor-college">{doc.college}</p>
+            <div className="doctor-meta">
+              <div className="doctor-meta-item">
+                <span className="meta-num">{doc.experience}</span>
+                <span className="meta-label">Experience</span>
+              </div>
+              <div className="doctor-divider-v"></div>
+              <div className="doctor-meta-item reg-item">
+                <span className="meta-num">{doc.regNo}</span>
+                <span className="meta-label">Registration</span>
+              </div>
+              <div className="doctor-divider-v"></div>
+              <div className="doctor-meta-item">
+                <div className="doctor-stars">
+                  {[1,2,3,4,5].map(s => <FiStar key={s} size={12} fill="var(--gold)" color="var(--gold)" />)}
+                </div>
+                <span className="meta-label">Rating</span>
+              </div>
+            </div>
           </div>
         </div>
-        <p className="doctor-bio">{doc.bio}</p>
-        <h5 className="expertise-title">Areas of Expertise</h5>
-        <ul className="expertise-list">
-          {doc.expertise.map((e, i) => (
-            <li key={i}>
-              <span className="feature-dot"></span>
-              {e}
-            </li>
-          ))}
-        </ul>
-        <div className="doctor-awards">
-          {doc.awards.map((a, i) => (
-            <div key={i} className="award-tag">
-              <FiCheckCircle size={12} /> {a}
+
+        {/* Back — hover reveal / tap reveal */}
+        <div className="doctor-back">
+          <div className="doctor-back-header">
+            <img src={doc.image} alt={doc.name} className="doctor-back-img" />
+            <div>
+              <h4>{doc.name}</h4>
+              <p>{doc.title}</p>
             </div>
-          ))}
+          </div>
+          <p className="doctor-bio">{doc.bio}</p>
+          <h5 className="expertise-title">Areas of Expertise</h5>
+          <ul className="expertise-list">
+            {doc.expertise.map((e, i) => (
+              <li key={i}>
+                <span className="feature-dot"></span>
+                {e}
+              </li>
+            ))}
+          </ul>
+          <div className="doctor-awards">
+            {doc.awards.map((a, i) => (
+              <div key={i} className="award-tag">
+                <FiCheckCircle size={12} /> {a}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
 
 const Doctors = () => (
   <section id="doctors" className="doctors section-padding bg-ivory">

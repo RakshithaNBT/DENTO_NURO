@@ -220,11 +220,34 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .appt-layout { grid-template-columns: 1fr; }
+  .appt-layout { grid-template-columns: 1fr; margin-top: 2rem; gap: 1.75rem; }
   .appt-info { order: 2; }
 }
 
 @media (max-width: 600px) {
-  .form-row  { grid-template-columns: 1fr; }
-  .appt-form { padding: 1.75rem; }
+  .form-row  { grid-template-columns: 1fr; gap: 1rem; }
+  .appt-form { padding: 1.5rem 1.25rem; }
+  .appt-info { padding: 1.75rem 1.25rem; }
+  .appt-success-box { padding: 2.25rem 1.5rem; }
 }
+
+@media (max-width: 480px) {
+  .appt-form { padding: 1.25rem 1rem; gap: 1rem; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.86rem;
+  }
+  .appt-submit { padding: 0.85rem; font-size: 0.92rem; }
+  .appt-info-icon { width: 38px; height: 38px; }
+  .appt-info-list li span { font-size: 0.84rem; }
+  .appt-success-box h3 { font-size: 1.35rem; }
+  .appt-success-box p { font-size: 0.85rem; }
+}
+
+@media (max-width: 360px) {
+  .appt-form { padding: 1rem 0.75rem; }
+  .appt-info { padding: 1.25rem 0.9rem; }
+}
+
