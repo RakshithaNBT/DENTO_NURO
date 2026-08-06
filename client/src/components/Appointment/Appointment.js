@@ -65,18 +65,25 @@ const Appointment = () => {
             <h3>Appointment Information</h3>
             <ul className="appt-info-list">
               {[
-                { icon: <FiPhone />, label: 'Phone / WhatsApp', val: '+91 63605 21761' },
-                { icon: <FiMail />,  label: 'Email',            val: 'smilewise.dentoneuro@gmail.com' },
+                { icon: <FiPhone />, label: 'Phone / WhatsApp', val: '+91 63605 21761', href: 'https://wa.me/916360521761?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20SMILEWISE%20Dento%20Neuro%20Clinic.' },
+                { icon: <FiMail />,  label: 'Email',            val: 'smilewise.dentoneuro@gmail.com', href: 'mailto:smilewise.dentoneuro@gmail.com' },
                 { icon: <FiCalendar/>,label:'Hours',            val: 'Mon–Sat: 9:30AM–2PM & 4:30PM–8PM' },
               ].map((item, i) => (
                 <li key={i}>
                   <span className="appt-info-icon">{item.icon}</span>
                   <div>
                     <strong>{item.label}</strong>
-                    <span>{item.val}</span>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noreferrer" style={{ color: 'rgba(255, 255, 255, 0.85)', textDecoration: 'none' }}>
+                        <span>{item.val}</span>
+                      </a>
+                    ) : (
+                      <span>{item.val}</span>
+                    )}
                   </div>
                 </li>
               ))}
+
             </ul>
             <div className="appt-img">
               <img
